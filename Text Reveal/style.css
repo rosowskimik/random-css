@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,400&subset=latin-ext');
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  background: #000;
+  font-family: 'Poppins', sans-serif;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  top: calc(50% - 10px);
+  left: calc(50% - 20px);
+  width: 40px;
+  height: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+}
+
+  input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 20px;
+    background: #111;
+    border-radius: 20px;
+  }
+
+  input[type="checkbox"]::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    background: #333;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    transition: .5s;
+  }
+
+  input[type="checkbox"]:checked::after {
+    background: #1fd95e;
+    transform: translateX(20px);
+  }
+
+.container h2 {
+  position: relative;
+  text-transform: uppercase;
+  color: #111;
+  background: linear-gradient(90deg, #fff, transparent);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  background-position-x: 200%;
+  background-repeat: no-repeat;
+  -webkit-text-fill-color: transparent;
+  transition: 5s;
+  transition-delay: .5s;
+}
+
+input[type="checkbox"]:checked ~ h2 {
+  background-position-x: 0;
+}
